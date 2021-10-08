@@ -1,3 +1,4 @@
+import html
 import json
 from os import listdir
 from os.path import isfile, join
@@ -28,14 +29,15 @@ for filename in files:
         if match == None: continue # TODO: Log error
 
         id      = match.group(1)
-        country = match.group(2)
-        title   = match.group(3)
-        city    = match.group(4)
+        country = html.unescape(match.group(2))
+        title   = html.unescape(match.group(3))
+        city    = html.unescape(match.group(4))
 
         dict[id] = {
             'country':  country,
             'title':    title,
             'city':     city,
         }
+
 
 print(json.dumps(dict))
