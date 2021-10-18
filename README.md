@@ -11,10 +11,12 @@ This will create `downloaded/` directory and many HTML files in it. Each file is
 
 2. Convert HTML files to JSON using:
 ```bash
-python3 html-to-json.py > universities.json
+python3 html-to-json.py --entities=universities > universities.json
+python3 html-to-json.py --entities=countries > countries.json
+python3 html-to-json.py --entities=cities > cities.json
 ```
 
-This will run through every file in `downloaded/` and produce a joined JSON.
+This will run through every file in `downloaded/` and produce a joined JSONs.
 
 ## Firebase Import
 In case you want to import this JSON to Firebase, use this:
